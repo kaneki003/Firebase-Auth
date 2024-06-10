@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Firebase Authentication with Next.js
+
+This project demonstrates the integration of Firebase Authentication within a Next.js application. It showcases how to authenticate users using Firebase's phone number verification and Google sign-in methods.
 
 ## Getting Started
 
-First, run the development server:
+Before you begin, ensure that you have set up your Firebase project in the Firebase console. Enable both phone number verification and Google authentication to proceed.
+
+## Installation
+
+Install the necessary packages to integrate Firebase into your Next.js app:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install firebase react-firebase-hooks
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Authentication Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Configuration
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Locate the config.ts file within the firebase directory. This file contains the Firebase configuration required for initializing the service in your application.
 
-## Learn More
+### Phone Verification
 
-To learn more about Next.js, take a look at the following resources:
+For implementing phone verification, refer to the signin.tsx file located in the app directory. This component handles the logic for verifying a user’s phone number.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Google Authentication
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To set up Google authentication, check out the signup.tsx file inside the google folder within the app directory. This component manages the Google sign-in process.
 
-## Deploy on Vercel
+### Session Management
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To manage user sessions, refer to the page.tsx file in the dashboard folder of the app directory. This middleware ensures that a user’s session is active by verifying the Firebase cookie.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Conclusion
+
+By following the instructions and referring to the provided files, you can successfully implement Firebase Authentication in your Next.js application. Enjoy building secure and scalable web applications!
